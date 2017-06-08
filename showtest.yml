@@ -1,0 +1,11 @@
+---
+- hosts: all
+  connection: local
+  gather_facts:no
+  
+  tasks:
+  - name: precheck show version
+  ios_commancd:
+    host: '{{ inventory_hostname }}'
+    commands:
+    - show version
